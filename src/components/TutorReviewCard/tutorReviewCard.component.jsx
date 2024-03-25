@@ -49,7 +49,7 @@ export const TutorReviewCard = ({ tutor }) => {
           }}
         >
           <Typography variant="body1">
-            Ratings : {rating} <FaStar style={{ color: "yellow" }} />
+            Ratings : {rating} <FaStar style={{ color: "gold" }} />
           </Typography>
         </div>
       </CardContent>

@@ -1,5 +1,6 @@
 import React from "react";
 import { TutorReviewCard } from "../TutorReviewCard";
+import { FaStar } from "react-icons/fa6";
 
 export const TutorReview = () => {
   // Sample data for tutor reviews
@@ -23,8 +24,8 @@ export const TutorReview = () => {
     {
       name: "Alice Johns",
       image: "url/to/image3.jpg",
-      subject: "English Literature",
-      review: "Very knowledgeable and patient.",
+      subject: "English",
+      review: "Very helpful and patient.",
       rating: 4,
       gender: "female",
     },
@@ -47,21 +48,22 @@ export const TutorReview = () => {
   ];
 
   return (
-    <div style={{ display: "flex", overflowX: "auto" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "columnn",
-          alignItems: "center",
-        }}
-      >
-        <h2>The Perfect Match</h2>
-        <p>
-          More than one million students gave a<br />
-          <b>5 star review to their tutor</b>
-        </p>
-      </div>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <h2>The Perfect Match</h2>
       <div>
+        <FaStar style={{ color: "gold" }} />
+        <FaStar style={{ color: "gold" }} />
+        <FaStar style={{ color: "gold" }} />
+        <FaStar style={{ color: "gold" }} />
+        <FaStar style={{ color: "gold" }} />
+      </div>
+      <p>
+        More than one million students gave a<br />
+        <b>5 star review to their tutor</b>
+      </p>
+      <div style={{ display: "flex", overflowX: "auto" }}>
         {tutorReviews.map((tutor, index) => (
           <TutorReviewCard key={index} tutor={tutor} />
         ))}
