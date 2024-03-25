@@ -10,7 +10,7 @@ import {
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 
-const TutorProfileCard = ({ tutor }) => {
+export const TutorProfileCard = ({ tutor }) => {
   const [liked, setLiked] = useState(false);
 
   const handleLikeClick = () => {
@@ -82,7 +82,7 @@ const TutorProfileCard = ({ tutor }) => {
           color="text.secondary"
           sx={{ textAlign: "center", marginTop: 1 }}
         >
-          Subjects: {tutor.subjects.join(", ")}
+          Subjects: {tutor.subjects}
         </Typography>
         <Typography
           variant="body2"
@@ -95,5 +95,3 @@ const TutorProfileCard = ({ tutor }) => {
     </Card>
   );
 };
-
-export default TutorProfileCard;
