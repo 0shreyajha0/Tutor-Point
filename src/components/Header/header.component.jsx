@@ -1,68 +1,179 @@
-import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Link,
-  Avatar,
-} from "@mui/material";
-import HelpIcon from "@mui/icons-material/Help";
-import { styled } from "@mui/system";
+import React, { useState, useEffect } from "react";
+import { Modal, IconButton, Typography, Box, AppBar } from "@mui/material";
+import { HelpOutline } from "@mui/icons-material";
+import { Login } from "../Login";
 import { SearchBar } from "../SearchBar";
-
-const GradientAppBar = styled(AppBar)`
-  background: linear-gradient(45deg, white, #ffb6c1);
-`;
+import { TbMathSymbols } from "react-icons/tb";
+import { SlChemistry } from "react-icons/sl";
+import { IoIosMusicalNotes } from "react-icons/io";
+import { CiFlag1 } from "react-icons/ci";
+import { GiMaterialsScience } from "react-icons/gi";
+import { display } from "@mui/system";
 
 export const Header = () => {
+  const [openModal, setOpenModal] = useState(false);
+  const [hideHeader, setHideHeader] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 50) {
+        setHideHeader(true);
+      } else {
+        setHideHeader(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
   return (
-    <GradientAppBar position="static">
-      <Toolbar>
-        {/* Image at top left */}
-        <Avatar
-          src="/your_image_path.jpg"
-          alt="Logo"
-          sx={{ marginRight: "auto" }}
-        />
+    <AppBar
+      position="sticky"
+      sx={{
+        background: "linear-gradient(to bottom, #FFFFFF, #FF7F8F)",
+        height: hideHeader ? "0" : "45vh",
+        transition: "height 0.3s",
+        borderRadius: "0,0, 50%, 50%",
+      }}
+    >
+      <Box
+        display={!hideHeader ? "flex" : "none"}
+        justifyContent="space-between"
+        alignItems="center"
+        px={2}
+      >
+        <Box display="flex" alignItems="center">
+          <div style={{ marginRight: "20px", cursor: "pointer" }}>
+            <img src="logo.png" alt="Your Logo" />
+          </div>
+          <div style={(display = "flex")}>
+            <div
+              style={{ cursor: "pointer", color: "black" }}
+              onClick={handleOpenModal}
+            >
+              Log in
+            </div>
+            <Modal open={openModal} onClose={handleCloseModal}>
+              <div>
+                <Login />
+              </div>
+            </Modal>
+            <IconButton>
+              <HelpOutline />
+            </IconButton>
+            <div style={{ cursor: "pointer", color: "black" }}>
+              Tutoring Jobs
+            </div>
+          </div>
+        </Box>
+      </Box>
 
-        {/* Text link directing to tutoring jobs */}
-        <Typography
-          variant="h6"
-          component={Link}
-          href="/tutoring-jobs"
-          color="inherit"
-          underline="none"
-          sx={{ marginRight: "20px" }}
+      <Box
+        display={!hideHeader ? "flex" : "none"}
+        justifyContent="center"
+        alignItems="center"
+        px={2}
+        my={2}
+      >
+        <Typography variant="h4" fontWeight="bold" color="black">
+          Tutor Point
+        </Typography>
+      </Box>
+      <Box
+        display={!hideHeader ? "flex" : "none"}
+        justifyContent="center"
+        alignItems="center"
+        px={2}
+      >
+        <Box bgcolor="white" borderRadius="30%" p={1} width="50%">
+          <Box height="90%" width="90%" bgcolor="pink" borderRadius="80%">
+            <SearchBar />
+          </Box>
+        </Box>
+      </Box>
+
+      <Box
+        display={!hideHeader ? "flex" : "none"}
+        justifyContent="space-between"
+        px={2}
+        mt={2}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            color: "black",
+          }}
         >
-          Tutoring Jobs
-        </Typography>
-
-        {/* Help icon at top right */}
-        <IconButton color="inherit" sx={{ marginRight: "20px" }}>
-          <HelpIcon />
-        </IconButton>
-
-        {/* Large heading in center */}
-        <Typography variant="h4" align="center" sx={{ flexGrow: 1 }}>
-          Find the perfect tutor
-        </Typography>
-
-        {/* Text link directing to Login */}
-        <Typography
-          variant="h6"
-          component={Link}
-          href="/login"
-          color="inherit"
-          underline="none"
-          sx={{ marginLeft: "20px" }}
-        >
-          Log In
-        </Typography>
-      </Toolbar>
-      <SearchBar />
-    </GradientAppBar>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              color: "black",
+            }}
+          >
+            <TbMathSymbols />
+            <Typography>Maths</Typography>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              color: "black",
+            }}
+          >
+            <SlChemistry />
+            <Typography>Chemistry</Typography>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              color: "black",
+            }}
+          >
+            <IoIosMusicalNotes />
+            <Typography sx={{ color: "black" }}>Music</Typography>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              color: "black",
+            }}
+          >
+            <CiFlag1 />
+            <Typography>Spanish</Typography>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              color: "black",
+            }}
+          >
+            <GiMaterialsScience />
+            <Typography>Physics</Typography>
+          </div>
+        </div>
+      </Box>
+    </AppBar>
   );
 };
-
-export default Header;

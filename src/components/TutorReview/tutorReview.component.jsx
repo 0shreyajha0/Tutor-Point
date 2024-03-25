@@ -3,7 +3,6 @@ import { TutorReviewCard } from "../TutorReviewCard";
 import { FaStar } from "react-icons/fa6";
 
 export const TutorReview = () => {
-  // Sample data for tutor reviews
   const tutorReviews = [
     {
       name: "John Doe",
