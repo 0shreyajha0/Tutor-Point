@@ -31,8 +31,12 @@ export const TutorReviewCard = ({ tutor }) => {
             }}
           />
           <div>
-            <Typography variant="h6">{name}</Typography>
-            <Typography variant="body2">{subject}</Typography>
+            <Typography variant="h6" sx={{ fontWeight: "bolder" }}>
+              {name}
+            </Typography>
+            <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+              {subject}
+            </Typography>
           </div>
         </Box>
         <Typography variant="body1" sx={{ mb: 2 }}>
