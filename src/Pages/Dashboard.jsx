@@ -6,6 +6,7 @@ import { LearnContent } from "../components/LearnContent";
 import { AvailableCity } from "../components/AvailableCity";
 import Fab from "@mui/material/Fab";
 import NavigationIcon from "@mui/icons-material/Navigation";
+import { ContentCard } from "../components/ContentCard";
 
 export const Dashboard = () => {
   return (
@@ -14,6 +15,7 @@ export const Dashboard = () => {
 
       <TutorProfile />
       <TutorReview />
+      <ContentCard />
       <LearnContent />
 
       <Fab variant="extended">
