@@ -12,17 +12,17 @@ export const LearnContent = () => {
     { name: "Microsoft Excel", href: "//example.com/excel" },
     { name: "Chess", href: "//example.com/chess" },
     { name: "Drawing", href: "//example.com/drawing" },
-    { name: "Graphic design", href: "//example.com/graphic-design" },
   ];
   const SecondDiv = [
     { name: "Acting", href: "//example.com/acting" },
     { name: "Music Production", href: "//example.com/music-production" },
-    { name: "American sign language", href: "//example.com/asl" },
+    { name: "American sign ", href: "//example.com/asl" },
     { name: "Driving", href: "//example.com/driving" },
     { name: "Violin", href: "//example.com/violin" },
     { name: "Calculus", href: "//example.com/calculus" },
     { name: "Python", href: "//example.com/python" },
     { name: "Economics", href: "//example.com/economics" },
+    { name: "Medicine", href: "//example.com/medicine" },
   ];
   const ThirdDiv = [
     { name: "Medicine", href: "//example.com/medicine" },
@@ -34,7 +34,6 @@ export const LearnContent = () => {
     { name: "Rubik's Cube", href: "//example.com/rubiks-cube" },
     { name: "Nursing", href: "//example.com/nursing" },
     { name: "Basic computing", href: "//example.com/computing" },
-    { name: "Chinese", href: "//example.com/chinese" },
   ];
   const FourthDiv = [
     { name: "Fashion Design", href: "//example.com/fashion-design" },
@@ -45,7 +44,6 @@ export const LearnContent = () => {
     { name: "Russian", href: "//example.com/russian" },
     { name: "Soccer", href: "//example.com/soccer" },
     { name: "Organic chemistry", href: "//example.com/organic-chemistry" },
-    { name: "Italian", href: "//example.com/italian" },
   ];
 
   return (
@@ -54,13 +52,14 @@ export const LearnContent = () => {
         Learn Whatever You Want
       </Typography>
       <Box sx={{ bgcolor: "white", p: 2 }}>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
           <div
             style={{
               width: "20%",
-              height: "310px",
-              backgroundColor: "lightgrey",
+              height: "425px",
+              backgroundColor: "#E9DCDC",
               borderRadius: "20px",
+              margin: "5px",
             }}
           >
             <br />
@@ -68,7 +67,7 @@ export const LearnContent = () => {
               <Typography
                 variant="body1"
                 key={index}
-                sx={{ cursor: "pointer" }}
+                sx={{ cursor: "pointer", marginTop: 2 }}
                 onClick={() => window.open(item.href)}
               >
                 {item.name}
@@ -78,9 +77,10 @@ export const LearnContent = () => {
           <div
             style={{
               width: "20%",
-              height: "310px",
-              backgroundColor: "lightgrey",
+              height: "425px",
+              backgroundColor: "#E9DCDC",
               borderRadius: "20px",
+              margin: "5px",
             }}
           >
             <br />
@@ -88,7 +88,7 @@ export const LearnContent = () => {
               <Typography
                 variant="body1"
                 key={index}
-                sx={{ cursor: "pointer" }}
+                sx={{ cursor: "pointer", marginTop: 2 }}
                 onClick={() => window.open(item.href)}
               >
                 {item.name}
@@ -98,9 +98,10 @@ export const LearnContent = () => {
           <div
             style={{
               width: "20%",
-              height: "310px",
-              backgroundColor: "lightgrey",
+              height: "425px",
+              backgroundColor: "#E9DCDC",
               borderRadius: "20px",
+              margin: "5px",
             }}
           >
             <br />
@@ -108,7 +109,7 @@ export const LearnContent = () => {
               <Typography
                 variant="body1"
                 key={index}
-                sx={{ cursor: "pointer" }}
+                sx={{ cursor: "pointer", marginTop: 2 }}
                 onClick={() => window.open(item.href)}
               >
                 {item.name}
@@ -118,9 +119,10 @@ export const LearnContent = () => {
           <div
             style={{
               width: "20%",
-              height: "310px",
-              backgroundColor: "lightgrey",
+              height: "425px",
+              backgroundColor: "#E9DCDC",
               borderRadius: "20px",
+              margin: "5px",
             }}
           >
             <br />
@@ -128,7 +130,7 @@ export const LearnContent = () => {
               <Typography
                 variant="body1"
                 key={index}
-                sx={{ cursor: "pointer" }}
+                sx={{ cursor: "pointer", marginTop: 2 }}
                 onClick={() => window.open(item.href)}
               >
                 {item.name}
