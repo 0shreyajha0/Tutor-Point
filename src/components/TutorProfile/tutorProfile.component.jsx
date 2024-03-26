@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 import { TutorProfileCard } from "../TutorProfileCard";
 import { FaStar } from "react-icons/fa";
 
@@ -14,7 +14,7 @@ export const TutorProfile = () => {
       review: "Great tutor, helped me a lot!",
       rating: 4.5,
       noOfReviews: 20,
-      rate: "$30/hr",
+      rate: "$30",
     },
     {
       name: "Jane Smith",
@@ -25,7 +25,7 @@ export const TutorProfile = () => {
       review: "Excellent explanations!",
       rating: 5,
       noOfReviews: 15,
-      rate: "$35/hr",
+      rate: "$35",
     },
     {
       name: "Alice Johnson",
@@ -36,7 +36,7 @@ export const TutorProfile = () => {
       review: "Very knowledgeable and patient.",
       rating: 4,
       noOfReviews: 25,
-      rate: "$25/hr",
+      rate: "$25",
     },
     {
       name: "Bob Brown",
@@ -47,7 +47,7 @@ export const TutorProfile = () => {
       review: "Made history fun to learn!",
       rating: 4.5,
       noOfReviews: 18,
-      rate: "$30/hr",
+      rate: "$30",
     },
     {
       name: "Eva Green",
@@ -58,7 +58,7 @@ export const TutorProfile = () => {
       review: "Clear and concise teaching.",
       rating: 3.5,
       noOfReviews: 22,
-      rate: "$40/hr",
+      rate: "$40",
     },
     {
       name: "Michael Clark",
@@ -69,34 +69,38 @@ export const TutorProfile = () => {
       review: "Extremely knowledgeable, highly recommend!",
       rating: 4.8,
       noOfReviews: 30,
-      rate: "$45/hr",
+      rate: "$45",
     },
   ];
 
   return (
-    <Box sx={{ width: "80%", maxWidth: '1080px', marginX: "auto", marginY: 4 }}>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <Box sx={{ width: "100%", marginY: 4 }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 2,
+          paddingX: 2,
+          justifyContent: "center",
+        }}
+      >
         <Typography variant="h6" sx={{ fontWeight: 700 }}>
           27 million evaluated private tutors
         </Typography>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Stack direction="row" spacing={1}>
           <FaStar style={{ color: "rgb(255, 99, 99)" }} />
           <FaStar style={{ color: "rgb(255, 99, 99)" }} />
           <FaStar style={{ color: "rgb(255, 99, 99)" }} />
           <FaStar style={{ color: "rgb(255, 99, 99)" }} />
-        </Box>
+          <FaStar style={{ color: "rgb(255, 99, 99)" }} />
+        </Stack>
       </Box>
-      <Box
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-around",
-          marginTop: 20,
-        }}
-      >
-        {tutorReviews.map((tutor, index) => (
-          <TutorProfileCard key={index} tutor={tutor} />
-        ))}
+      <Box sx={{ display: "flex", overflowX: "auto", alignItems: "center" }}>
+        <Stack direction="row" spacing={2}>
+          {tutorReviews.map((tutor, index) => (
+            <TutorProfileCard key={index} tutor={tutor} />
+          ))}
+        </Stack>
       </Box>
     </Box>
   );

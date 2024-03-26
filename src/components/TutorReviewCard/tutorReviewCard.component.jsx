@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, Box } from "@mui/material";
 import { FaStar } from "react-icons/fa6";
+import Avatar from "@mui/material/Avatar";
 
 export const TutorReviewCard = ({ tutor }) => {
   const { name, image, subject, review, rating, gender } = tutor;
@@ -19,10 +20,10 @@ export const TutorReviewCard = ({ tutor }) => {
     >
       <CardContent>
         <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-          <img
+          <Avatar
             src={image}
             alt={name}
-            style={{
+            sx={{
               borderRadius: "50%",
               width: 60,
               height: 60,

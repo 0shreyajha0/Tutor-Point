@@ -53,7 +53,7 @@ export const Header = () => {
     >
       <Box
         display="flex"
-        sx={{ justifyContent: "space-between", width: "100%", p: 3 }}
+        sx={{ justifyContent: "space-evenly", width: "100%", p: 3 }}
       >
         <Logo />
         <Box
@@ -73,14 +73,15 @@ export const Header = () => {
           >
             Tutoring Jobs
           </Button>
-          <Button
-            sx={{ color: "black", textTransform: "capitalize" }}
-            onClick={handleOpenModal}
-            variant="text"
-          >
-            Log in
-          </Button>
         </Box>
+
+        <Button
+          sx={{ color: "black", textTransform: "capitalize" }}
+          onClick={handleOpenModal}
+          variant="text"
+        >
+          LogIn
+        </Button>
       </Box>
 
       <Box
