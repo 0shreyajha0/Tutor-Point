@@ -13,21 +13,23 @@ export const ContentCard = () => {
     window.location.href = href;
   };
   return (
-    <Card sx={{ Width: 800, height: 600, margin: 30, borderRadius: "25px" }}>
+    <Card sx={{ Width: 800, height: 600, margin: 30, borderRadius: "45px" }}>
       <CardMedia
         sx={{
-          height: "100%",
-          width: "100%",
+          Width: 800,
+          height: 600,
           backgroundColor: "grey",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           position: "relative",
+          backgroundColor: "black",
         }}
       >
         <img
           src="https://c.superprof.com/style/images/home/v4/become-teacher.webp"
           alt="placeholder"
+          sx={{ height: "100%", width: "100%" }}
         />
         <Box
           sx={{
@@ -39,7 +41,7 @@ export const ContentCard = () => {
             padding: 2,
             height: 230,
             width: 350,
-            borderRadius: "25px",
+            borderRadius: "35px",
           }}
         >
           <Typography
@@ -58,7 +60,7 @@ export const ContentCard = () => {
           </Typography>
           <Button
             variant="contained"
-            sx={{ backgroundColor: "black", margin: 2 }}
+            sx={{ backgroundColor: "black", margin: 2, borderRadius: "10px" }}
             // onClick={handleItemClick(href)}}
           >
             Find Out More
