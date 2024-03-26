@@ -1,4 +1,5 @@
 import React from "react";
+import { Box, Typography, Stack } from "@mui/material";
 import { TutorReviewCard } from "../TutorReviewCard";
 import { FaStar } from "react-icons/fa6";
 
@@ -6,7 +7,8 @@ export const TutorReview = () => {
   const tutorReviews = [
     {
       name: "John Doe",
-      image: "url/to/image1.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       subject: "Mathematics",
       review: "Great tutor, helped me a lot!",
       rating: 4.5,
@@ -14,7 +16,8 @@ export const TutorReview = () => {
     },
     {
       name: "Jane Smithsons",
-      image: "url/to/image2.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       subject: "Physics",
       review: "Excellent explanations!",
       rating: 5,
@@ -22,7 +25,8 @@ export const TutorReview = () => {
     },
     {
       name: "Alice Johns",
-      image: "url/to/image3.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       subject: "English",
       review: "Very helpful and patient.",
       rating: 4,
@@ -30,7 +34,8 @@ export const TutorReview = () => {
     },
     {
       name: "Bob Brown",
-      image: "url/to/image4.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       subject: "History",
       review: "Made history fun to learn!",
       rating: 4.5,
@@ -38,7 +43,8 @@ export const TutorReview = () => {
     },
     {
       name: "Eva Green",
-      image: "url/to/image5.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       subject: "Chemistry",
       review: "Clear and concise teaching.",
       rating: 3.5,
@@ -47,26 +53,30 @@ export const TutorReview = () => {
   ];
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <h2>The Perfect Match</h2>
-      <div>
-        <FaStar style={{ color: "gold" }} />
-        <FaStar style={{ color: "gold" }} />
-        <FaStar style={{ color: "gold" }} />
-        <FaStar style={{ color: "gold" }} />
-        <FaStar style={{ color: "gold" }} />
-      </div>
-      <p>
-        More than one million students gave a<br />
-        <b>5 star review to their tutor</b>
-      </p>
-      <div style={{ display: "flex", overflowX: "auto" }}>
+    <Box sx={{ display: "flex", overflowX: "auto", alignItems: "center" }}>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      >
+        <Typography variant="h5" sx={{ fontWeight: 700 }}>
+          The Perfect Match
+        </Typography>
+        <Stack direction="row" spacing={1}>
+          <FaStar style={{ color: "gold" }} />
+          <FaStar style={{ color: "gold" }} />
+          <FaStar style={{ color: "gold" }} />
+          <FaStar style={{ color: "gold" }} />
+          <FaStar style={{ color: "gold" }} />
+        </Stack>
+        <Typography variant="h6" sx={{ fontWeight: 500 }}>
+          More than one million students gave a<br />
+          <b>5 star review to their tutor</b>
+        </Typography>
+      </Box>
+      <Stack direction="row" spacing={2}>
         {tutorReviews.map((tutor, index) => (
           <TutorReviewCard key={index} tutor={tutor} />
         ))}
-      </div>
-    </div>
+      </Stack>
+    </Box>
   );
 };

@@ -77,7 +77,7 @@ export const TutorProfileCard = ({ tutor }) => {
             </IconButton>
           </Box>
         </Box>
-        {/*  */}
+
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box
             sx={{

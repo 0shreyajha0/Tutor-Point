@@ -6,7 +6,7 @@ import Avatar from "@mui/material/Avatar";
 export const TutorReviewCard = ({ tutor }) => {
   const { name, image, subject, review, rating, gender } = tutor;
 
-  const cardColor = gender === "male" ? "#add8e6" : "#d8ad"; //
+  const cardColor = gender === "male" ? "#add8e6" : "#d8ad";
 
   return (
     <Card
@@ -38,22 +38,32 @@ export const TutorReviewCard = ({ tutor }) => {
         <Typography variant="body1" sx={{ mb: 2 }}>
           {review}
         </Typography>
-        <div
-          style={{
-            width: "100%",
-            height: "15px",
+        <Box
+          sx={{
+            width: "150px",
+            height: "25px",
             borderRadius: 10,
             backgroundColor: "orange",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             padding: "5px",
+            marginRight: "5px",
           }}
         >
-          <Typography variant="body1">
-            Ratings : {rating} <FaStar style={{ color: "gold" }} />
-          </Typography>
-        </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "5px",
+              marginRight: "5px",
+            }}
+          >
+            <Typography variant="body2">Ratings : {rating}</Typography>
+            <FaStar style={{ color: "gold" }} />
+          </div>
+        </Box>
       </CardContent>
     </Card>
   );
