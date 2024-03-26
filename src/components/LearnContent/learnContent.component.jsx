@@ -1,13 +1,9 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { Route } from "react-router-dom";
 
 export const LearnContent = () => {
   const FirstDiv = [
-    {
-      name: "Statistics",
-      href: "https://github.com/0shreyajha0/Stats-Dashboard",
-    },
+    { name: "Statistics", href: "//example.com/statistics" },
     { name: "French", href: "//example.com/french" },
     { name: "Dance", href: "//example.com/dance" },
     { name: "AutoCAD", href: "//example.com/autocad" },
@@ -50,8 +46,8 @@ export const LearnContent = () => {
     { name: "Organic chemistry", href: "//example.com/organic-chemistry" },
   ];
 
-  const changePage = (href) => {
-    <Route path="href" />;
+  const handleItemClick = (href) => {
+    window.location.href = href;
   };
 
   return (
@@ -76,9 +72,7 @@ export const LearnContent = () => {
                 variant="body1"
                 key={index}
                 sx={{ cursor: "pointer", marginTop: 2 }}
-                onClick={() => {
-                  changePage(item.href);
-                }}
+                onClick={() => handleItemClick(item.href)}
               >
                 {item.name}
               </Typography>
