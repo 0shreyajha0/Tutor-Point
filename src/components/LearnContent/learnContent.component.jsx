@@ -93,7 +93,7 @@ export const LearnContent = () => {
                 variant="body1"
                 key={index}
                 sx={{ cursor: "pointer", marginTop: 2 }}
-                onClick={() => window.open(item.href)}
+                onClick={() => handleItemClick(item.href)}
               >
                 {item.name}
               </Typography>
@@ -114,7 +114,7 @@ export const LearnContent = () => {
                 variant="body1"
                 key={index}
                 sx={{ cursor: "pointer", marginTop: 2 }}
-                onClick={() => window.open(item.href)}
+                onClick={() => handleItemClick(item.href)}
               >
                 {item.name}
               </Typography>
@@ -135,7 +135,7 @@ export const LearnContent = () => {
                 variant="body1"
                 key={index}
                 sx={{ cursor: "pointer", marginTop: 2 }}
-                onClick={() => window.open(item.href)}
+                onClick={() => handleItemClick(item.href)}
               >
                 {item.name}
               </Typography>
