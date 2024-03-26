@@ -17,7 +17,6 @@ export const TutorReviewCard = ({ tutor, index }) => {
           mt: 2,
           backgroundColor: cardColor,
           borderRadius: "25px",
-          overflow: "scroll",
         }}
       >
         <CardContent
