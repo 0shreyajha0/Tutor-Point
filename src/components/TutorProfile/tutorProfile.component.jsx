@@ -1,11 +1,14 @@
 import React from "react";
+import { Box, Typography } from "@mui/material";
 import { TutorProfileCard } from "../TutorProfileCard";
+import { FaStar } from "react-icons/fa";
 
 export const TutorProfile = () => {
   const tutorReviews = [
     {
       name: "John Doe",
-      image: "url/to/image1.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       location: "New York",
       subject: "Mathematics",
       review: "Great tutor, helped me a lot!",
@@ -15,7 +18,8 @@ export const TutorProfile = () => {
     },
     {
       name: "Jane Smith",
-      image: "url/to/image2.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       location: "Los Angeles",
       subject: "Physics",
       review: "Excellent explanations!",
@@ -25,7 +29,8 @@ export const TutorProfile = () => {
     },
     {
       name: "Alice Johnson",
-      image: "url/to/image3.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       location: "Chicago",
       subject: "English Literature",
       review: "Very knowledgeable and patient.",
@@ -35,7 +40,8 @@ export const TutorProfile = () => {
     },
     {
       name: "Bob Brown",
-      image: "url/to/image4.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       location: "Houston",
       subject: "History",
       review: "Made history fun to learn!",
@@ -45,7 +51,8 @@ export const TutorProfile = () => {
     },
     {
       name: "Eva Green",
-      image: "url/to/image5.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       location: "San Francisco",
       subject: "Chemistry",
       review: "Clear and concise teaching.",
@@ -55,7 +62,8 @@ export const TutorProfile = () => {
     },
     {
       name: "Michael Clark",
-      image: "url/to/image6.jpg",
+      image:
+        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
       location: "Miami",
       subject: "Biology",
       review: "Extremely knowledgeable, highly recommend!",
@@ -63,33 +71,33 @@ export const TutorProfile = () => {
       noOfReviews: 30,
       rate: "$45/hr",
     },
-    {
-      name: "Sarah White",
-      image: "url/to/image7.jpg",
-      location: "Seattle",
-      subject: "Computer Science",
-      review: "Fantastic teacher, made complex concepts easy to understand.",
-      rating: 4.9,
-      noOfReviews: 28,
-      rate: "$50/hr",
-    },
-    {
-      name: "David Lee",
-      image: "url/to/image8.jpg",
-      location: "Boston",
-      subject: "Economics",
-      review: "Patient and thorough, helped me ace my exams!",
-      rating: 4.6,
-      noOfReviews: 23,
-      rate: "$35/hr",
-    },
   ];
 
   return (
-    <div style={{ display: "flex", overflowX: "auto" }}>
-      {tutorReviews.map((tutor, index) => (
-        <TutorProfileCard key={index} tutor={tutor} />
-      ))}
-    </div>
+    <Box sx={{ width: "80%", maxWidth: '1080px', marginX: "auto", marginY: 4 }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <Typography variant="h6" sx={{ fontWeight: 700 }}>
+          27 million evaluated private tutors
+        </Typography>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <FaStar style={{ color: "rgb(255, 99, 99)" }} />
+          <FaStar style={{ color: "rgb(255, 99, 99)" }} />
+          <FaStar style={{ color: "rgb(255, 99, 99)" }} />
+          <FaStar style={{ color: "rgb(255, 99, 99)" }} />
+        </Box>
+      </Box>
+      <Box
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-around",
+          marginTop: 20,
+        }}
+      >
+        {tutorReviews.map((tutor, index) => (
+          <TutorProfileCard key={index} tutor={tutor} />
+        ))}
+      </Box>
+    </Box>
   );
 };

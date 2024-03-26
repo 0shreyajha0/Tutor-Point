@@ -6,7 +6,7 @@ import { LearnContent } from "../components/LearnContent";
 export const Dashboard = () => {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <TutorProfile />
       <TutorReview />
       <LearnContent />

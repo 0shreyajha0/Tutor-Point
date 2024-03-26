@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
+import { BsStars } from "react-icons/bs";
 
 export const TutorProfileCard = ({ tutor }) => {
   const [liked, setLiked] = useState(false);
@@ -18,64 +19,105 @@ export const TutorProfileCard = ({ tutor }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 300 }}>
-      <Avatar
-        src={tutor.image}
-        alt={tutor.name}
-        sx={{ width: 200, height: 200, margin: "auto" }}
-      />
-      <CardContent>
-        <Typography variant="h6" component="div" sx={{ textAlign: "center" }}>
-          {tutor.name}
-        </Typography>
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          sx={{ textAlign: "center" }}
-        >
-          {tutor.location}
-        </Typography>
-        <IconButton
-          onClick={handleLikeClick}
-          sx={{
-            color: liked ? "red" : "inherit",
-            margin: "auto",
-            display: "block",
-          }}
-        >
-          <FavoriteIcon />
-        </IconButton>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 1,
-          }}
-        >
-          <StarIcon sx={{ color: "yellow" }} />
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{ marginLeft: 1 }}
-          >
-            {tutor.reviews} Reviews
-          </Typography>
-        </Box>
-        <Box sx={{ textAlign: "center", marginTop: 1 }}>
-          <div
-            style={{
-              width: 40,
-              height: 40,
-              borderRadius: "50%",
-              backgroundColor: "lightblue",
+    <Card sx={{ width: 320, p: 0, overflow: "hidden", borderRadius: "25px" }}>
+      <CardContent sx={{ p: 0 }}>
+        <Box sx={{ position: "relative" }}>
+          <Box
+            component="img"
+            src={tutor.image}
+            alt={tutor.name}
+            sx={{
+              width: "100%",
+              height: 300,
               margin: "auto",
+              borderRadius: "25px",
+            }}
+          />
+
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{
+              textAlign: "center",
+              position: "absolute",
+              bottom: 25,
+              left: 10,
+              fontWeight: 800,
+              color: "white",
             }}
           >
-            <Typography variant="body2" sx={{ lineHeight: "40px" }}>
-              Ambassador
+            {tutor.name}
+          </Typography>
+          <Typography
+            variant="h6"
+            color="text.secondary"
+            sx={{
+              textAlign: "center",
+              position: "absolute",
+              bottom: 4,
+              color: "white",
+              left: 10,
+              fontWeight: 500,
+            }}
+          >
+            {tutor.location}
+          </Typography>
+          <Box sx={{ position: "absolute", top: 2, right: 2 }}>
+            <IconButton
+              onClick={handleLikeClick}
+              sx={{
+                margin: "auto",
+                display: "block",
+
+                bottom: 0,
+                color: "white",
+              }}
+            >
+              <FavoriteIcon />
+            </IconButton>
+          </Box>
+        </Box>
+        {/*  */}
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: 1,
+            }}
+          >
+            <StarIcon sx={{ color: "gold" }} />
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ marginLeft: 1 }}
+            >
+              {tutor.rating} Reviews
             </Typography>
-          </div>
+          </Box>
+          <Box sx={{}}>
+            <Box
+              style={{
+                padding: "4px 15px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: 40,
+                borderRadius: "25px",
+                gap: 4,
+                backgroundColor: "#EEEEFF",
+              }}
+            >
+              <BsStars style={{ color: "#5D5DEC" }} />
+              <Typography
+                variant="body2"
+                sx={{ color: "#5D5DEC", fontWeight: 500 }}
+              >
+                Ambassador
+              </Typography>
+            </Box>
+          </Box>
         </Box>
         <Typography
           variant="body2"

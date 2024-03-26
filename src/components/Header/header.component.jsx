@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Modal, IconButton, Typography, Box, AppBar } from "@mui/material";
+import {
+  Modal,
+  IconButton,
+  Typography,
+  Box,
+  AppBar,
+  Button,
+} from "@mui/material";
 import { HelpOutline } from "@mui/icons-material";
 import { Login } from "../Login";
 import { SearchBar } from "../SearchBar";
-import { TbMathSymbols } from "react-icons/tb";
-import { SlChemistry } from "react-icons/sl";
-import { IoIosMusicalNotes } from "react-icons/io";
-import { CiFlag1 } from "react-icons/ci";
-import { GiMaterialsScience } from "react-icons/gi";
-import { display } from "@mui/system";
+import { Logo } from "../Logo";
+import { HeaderIcons } from "../HeaderIcons";
 
 export const Header = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -39,141 +42,85 @@ export const Header = () => {
 
   return (
     <AppBar
-      position="sticky"
+      position="relative"
       sx={{
-        background: "linear-gradient(to bottom, #FFFFFF, #FF7F8F)",
-        height: hideHeader ? "0" : "45vh",
+        background:
+          "linear-gradient(to bottom, #FFFFFF, rgba(255,127,143,0.3))",
+        minHeight: "58vh",
         transition: "height 0.3s",
-        borderRadius: "0,0, 50%, 50%",
+        borderRadius: "0 0 50px 50px",
       }}
     >
       <Box
-        display={!hideHeader ? "flex" : "none"}
-        justifyContent="space-between"
-        alignItems="center"
-        px={2}
+        display="flex"
+        sx={{ justifyContent: "space-between", width: "100%", p: 3 }}
       >
-        <Box display="flex" alignItems="center">
-          <div style={{ marginRight: "20px", cursor: "pointer" }}>
-            <img src="logo.png" alt="Your Logo" />
-          </div>
-          <div style={(display = "flex")}>
-            <div
-              style={{ cursor: "pointer", color: "black" }}
-              onClick={handleOpenModal}
-            >
-              Log in
-            </div>
-            <Modal open={openModal} onClose={handleCloseModal}>
-              <div>
-                <Login />
-              </div>
-            </Modal>
-            <IconButton>
-              <HelpOutline />
-            </IconButton>
-            <div style={{ cursor: "pointer", color: "black" }}>
-              Tutoring Jobs
-            </div>
-          </div>
+        <Logo />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            color: "black",
+          }}
+        >
+          <IconButton>
+            <HelpOutline />
+          </IconButton>
+          <Button
+            sx={{ color: "black", textTransform: "capitalize" }}
+            variant="text"
+          >
+            Tutoring Jobs
+          </Button>
+          <Button
+            sx={{ color: "black", textTransform: "capitalize" }}
+            onClick={handleOpenModal}
+            variant="text"
+          >
+            Log in
+          </Button>
         </Box>
       </Box>
 
       <Box
-        display={!hideHeader ? "flex" : "none"}
+        display="flex"
         justifyContent="center"
         alignItems="center"
         px={2}
         my={2}
       >
-        <Typography variant="h4" fontWeight="bold" color="black">
-          Tutor Point
+        <Typography
+          variant="h2"
+          fontWeight="bold"
+          color="black"
+          sx={{ width: "390px" }}
+        >
+          Find the perfect tutor
         </Typography>
       </Box>
       <Box
-        display={!hideHeader ? "flex" : "none"}
+        display="flex"
         justifyContent="center"
         alignItems="center"
         px={2}
+        marginTop="20px"
       >
-        <Box bgcolor="white" borderRadius="30%" p={1} width="50%">
-          <Box height="90%" width="90%" bgcolor="pink" borderRadius="80%">
-            <SearchBar />
-          </Box>
-        </Box>
+        <SearchBar />
       </Box>
-
       <Box
-        display={!hideHeader ? "flex" : "none"}
-        justifyContent="space-between"
-        px={2}
-        mt={2}
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "40px",
+        }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            color: "black",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              color: "black",
-            }}
-          >
-            <TbMathSymbols />
-            <Typography>Maths</Typography>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              color: "black",
-            }}
-          >
-            <SlChemistry />
-            <Typography>Chemistry</Typography>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              color: "black",
-            }}
-          >
-            <IoIosMusicalNotes />
-            <Typography sx={{ color: "black" }}>Music</Typography>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              color: "black",
-            }}
-          >
-            <CiFlag1 />
-            <Typography>Spanish</Typography>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              color: "black",
-            }}
-          >
-            <GiMaterialsScience />
-            <Typography>Physics</Typography>
-          </div>
-        </div>
+        <HeaderIcons />
       </Box>
+      <Modal open={openModal} onClose={handleCloseModal}>
+        <Login />
+      </Modal>
     </AppBar>
   );
 };
