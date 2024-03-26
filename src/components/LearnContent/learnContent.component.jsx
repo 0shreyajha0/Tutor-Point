@@ -15,7 +15,7 @@ export const LearnContent = () => {
   ];
   const SecondDiv = [
     { name: "Acting", href: "//example.com/acting" },
-    { name: "Music Production", href: "//example.com/music-production" },
+    { name: "Music ", href: "//example.com/music-production" },
     { name: "American sign ", href: "//example.com/asl" },
     { name: "Driving", href: "//example.com/driving" },
     { name: "Violin", href: "//example.com/violin" },
