@@ -1,148 +1,53 @@
-import React from "react";
 import { Box, Typography } from "@mui/material";
+import { DATA, CITY_DATA } from "./LearnContent.constants";
+import { ListCard } from "../ListCard";
 
 export const LearnContent = () => {
-  const FirstDiv = [
-    { name: "Statistics", href: "//example.com/statistics" },
-    { name: "French", href: "//example.com/french" },
-    { name: "Dance", href: "//example.com/dance" },
-    { name: "AutoCAD", href: "//example.com/autocad" },
-    { name: "Accounting", href: "//example.com/accounting" },
-    { name: "Biology", href: "//example.com/biology" },
-    { name: "Microsoft Excel", href: "//example.com/excel" },
-    { name: "Chess", href: "//example.com/chess" },
-    { name: "Drawing", href: "//example.com/drawing" },
-  ];
-  const SecondDiv = [
-    { name: "Acting", href: "//example.com/acting" },
-    { name: "Music ", href: "//example.com/music-production" },
-    { name: "American sign ", href: "//example.com/asl" },
-    { name: "Driving", href: "//example.com/driving" },
-    { name: "Violin", href: "//example.com/violin" },
-    { name: "Calculus", href: "//example.com/calculus" },
-    { name: "Python", href: "//example.com/python" },
-    { name: "Economics", href: "//example.com/economics" },
-    { name: "Medicine", href: "//example.com/medicine" },
-  ];
-  const ThirdDiv = [
-    { name: "Medicine", href: "//example.com/medicine" },
-    { name: "Yoga", href: "//example.com/yoga" },
-    { name: "Cryptocurrency", href: "//example.com/cryptocurrency" },
-    { name: "Vocal coach", href: "//example.com/vocal-coach" },
-    { name: "Swimming", href: "//example.com/swimming" },
-    { name: "Reading", href: "//example.com/reading" },
-    { name: "Rubik's Cube", href: "//example.com/rubiks-cube" },
-    { name: "Nursing", href: "//example.com/nursing" },
-    { name: "Basic computing", href: "//example.com/computing" },
-  ];
-  const FourthDiv = [
-    { name: "Fashion Design", href: "//example.com/fashion-design" },
-    { name: "Essay writing", href: "//example.com/essay-writing" },
-    { name: "DJing", href: "//example.com/djing" },
-    { name: "Music Reading", href: "//example.com/music-reading" },
-    { name: "Japanese", href: "//example.com/japanese" },
-    { name: "Russian", href: "//example.com/russian" },
-    { name: "Soccer", href: "//example.com/soccer" },
-    { name: "Organic chemistry", href: "//example.com/organic-chemistry" },
-  ];
-
-  const handleItemClick = (href) => {
-    window.location.href = href;
-  };
-
   return (
-    <div>
-      <Typography variant="h5" style={{ fontWeight: "bold", paddingTop: 30 }}>
-        Learn Whatever You Want
-      </Typography>
-      <Box sx={{ bgcolor: "white", p: 2 }}>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <div
-            style={{
-              width: "20%",
-              height: "425px",
-              backgroundColor: "#E9DCDC",
-              borderRadius: "20px",
-              margin: "5px",
-            }}
-          >
-            <br />
-            {FirstDiv.map((item, index) => (
-              <Typography
-                variant="body1"
-                key={index}
-                sx={{ cursor: "pointer", marginTop: 2 }}
-                onClick={() => handleItemClick(item.href)}
-              >
-                {item.name}
-              </Typography>
-            ))}
-          </div>
-          <div
-            style={{
-              width: "20%",
-              height: "425px",
-              backgroundColor: "#E9DCDC",
-              borderRadius: "20px",
-              margin: "5px",
-            }}
-          >
-            <br />
-            {SecondDiv.map((item, index) => (
-              <Typography
-                variant="body1"
-                key={index}
-                sx={{ cursor: "pointer", marginTop: 2 }}
-                onClick={() => handleItemClick(item.href)}
-              >
-                {item.name}
-              </Typography>
-            ))}
-          </div>
-          <div
-            style={{
-              width: "20%",
-              height: "425px",
-              backgroundColor: "#E9DCDC",
-              borderRadius: "20px",
-              margin: "5px",
-            }}
-          >
-            <br />
-            {ThirdDiv.map((item, index) => (
-              <Typography
-                variant="body1"
-                key={index}
-                sx={{ cursor: "pointer", marginTop: 2 }}
-                onClick={() => handleItemClick(item.href)}
-              >
-                {item.name}
-              </Typography>
-            ))}
-          </div>
-          <div
-            style={{
-              width: "20%",
-              height: "425px",
-              backgroundColor: "#E9DCDC",
-              borderRadius: "20px",
-              margin: "5px",
-            }}
-          >
-            <br />
-            {FourthDiv.map((item, index) => (
-              <Typography
-                variant="body1"
-                key={index}
-                sx={{ cursor: "pointer", marginTop: 2 }}
-                onClick={() => handleItemClick(item.href)}
-              >
-                {item.name}
-              </Typography>
-            ))}
-          </div>
+    <Box sx={{ width: "70%", marginX: "auto", marginY: 4 }}>
+      <Box>
+        <Typography variant="h4" style={{ fontWeight: 900, paddingTop: 30 }}>
+          Learn whatever you want
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "32px",
+            marginTop: 4,
+          }}
+        >
+          {DATA.map((list, index) => (
+            <ListCard key={index} list={list} />
+          ))}
         </Box>
       </Box>
-    </div>
+      <Box sx={{ marginTop: 2 }}>
+        <Typography
+          variant="h4"
+          style={{
+            fontWeight: 900,
+            paddingTop: 30,
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Box component="span">Learn,</Box>
+          <Box component="span">Explore your city</Box>
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "32px",
+            marginTop: 4,
+          }}
+        >
+          {CITY_DATA.map((list, index) => (
+            <ListCard forCity={true} key={index} list={list} />
+          ))}
+        </Box>
+      </Box>
+    </Box>
   );
 };

@@ -20,7 +20,7 @@ export const TutorProfileCard = ({ tutor }) => {
 
   return (
     <Card sx={{ width: 320, p: 0, overflow: "hidden", borderRadius: "25px" }}>
-      <CardContent sx={{ p: 0 }}>
+      <CardContent sx={{ p: 0, height: "100%" }}>
         <Box sx={{ position: "relative" }}>
           <Box
             component="img"
@@ -77,62 +77,62 @@ export const TutorProfileCard = ({ tutor }) => {
             </IconButton>
           </Box>
         </Box>
-
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              marginTop: 1,
-            }}
-          >
-            <StarIcon sx={{ color: "gold" }} />
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{ marginLeft: 1 }}
-            >
-              {tutor.rating} Reviews
-            </Typography>
-          </Box>
-          <Box sx={{}}>
+        {/*  */}
+        <Box sx={{ p: 1, display: "flex", flexDirection: "column" }}>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Box
-              style={{
-                padding: "4px 15px",
+              sx={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                height: 40,
-                borderRadius: "25px",
-                gap: 4,
-                backgroundColor: "#EEEEFF",
+                marginTop: 1,
               }}
             >
-              <BsStars style={{ color: "#5D5DEC" }} />
+              <StarIcon sx={{ color: "gold" }} />
               <Typography
                 variant="body2"
-                sx={{ color: "#5D5DEC", fontWeight: 500 }}
+                color="text.secondary"
+                sx={{ marginLeft: 1 }}
               >
-                Ambassador
+                {tutor.rating} Reviews
               </Typography>
             </Box>
+            <Box sx={{}}>
+              <Box
+                style={{
+                  padding: "4px 15px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: 40,
+                  borderRadius: "25px",
+                  gap: 4,
+                  backgroundColor: "#EEEEFF",
+                }}
+              >
+                <BsStars style={{ color: "#5D5DEC" }} />
+                <Typography
+                  variant="body2"
+                  sx={{ color: "#5D5DEC", fontWeight: 500 }}
+                >
+                  Ambassador
+                </Typography>
+              </Box>
+            </Box>
           </Box>
+          <Typography
+            variant="body1"
+            sx={{ flex: 1, marginTop: 1, marginX: 1 }}
+          >
+            {tutor.review}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ marginLeft: 1, marginTop: 1, fontWeight: 900 }}
+          >
+            {tutor.rate}/hr
+          </Typography>
         </Box>
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          sx={{ textAlign: "center", marginTop: 1 }}
-        >
-          Subjects: {tutor.subjects}
-        </Typography>
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          sx={{ textAlign: "center", marginTop: 1 }}
-        >
-          Rate: {tutor.rate}/hr
-        </Typography>
       </CardContent>
     </Card>
   );

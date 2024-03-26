@@ -13,10 +13,17 @@ export const ContentCard = () => {
     window.location.href = href;
   };
   return (
-    <Card sx={{ Width: 800, height: 600, margin: 30, borderRadius: "45px" }}>
+    <Card
+      sx={{
+        width: 1200,
+        height: 600,
+        marginY: 20,
+        marginX: "auto",
+        borderRadius: "45px",
+      }}
+    >
       <CardMedia
         sx={{
-          Width: 800,
           height: 600,
           backgroundColor: "grey",
           display: "flex",
@@ -38,7 +45,7 @@ export const ContentCard = () => {
             left: 30,
             backgroundColor: "#F0C8AA",
             color: "white",
-            padding: 2,
+            padding: 4,
             height: 230,
             width: 350,
             borderRadius: "35px",
@@ -54,14 +61,17 @@ export const ContentCard = () => {
           <Typography
             variant="body2"
             component="p"
-            sx={{ color: "black", margin: 1 }}
+            sx={{ color: "black", marginTop: 1 }}
           >
             Share your Knowledge, live off your Passion and become your own boss
           </Typography>
           <Button
             variant="contained"
-            sx={{ backgroundColor: "black", margin: 2, borderRadius: "10px" }}
-            // onClick={handleItemClick(href)}}
+            sx={{
+              backgroundColor: "black",
+              marginTop: 2,
+              borderRadius: "10px",
+            }}
           >
             Find Out More
           </Button>

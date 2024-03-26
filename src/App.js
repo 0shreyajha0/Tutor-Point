@@ -1,11 +1,13 @@
 import "./App.css";
-import { Dashboard } from "./Pages/Dashboard";
+import { Box } from "@mui/material";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Router";
 
 function App() {
   return (
-    <div className="App">
-      <Dashboard />
-    </div>
+    <Box>
+      <RouterProvider router={router} />
+    </Box>
   );
 }
 

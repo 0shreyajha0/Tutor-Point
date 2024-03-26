@@ -1,82 +1,50 @@
+import { Box, Typography } from "@mui/material";
 import React from "react";
-import { Box, Typography, Stack } from "@mui/material";
-import { TutorReviewCard } from "../TutorReviewCard";
 import { FaStar } from "react-icons/fa6";
+import { TutorReviewCard } from "../TutorReviewCard";
+import { TUTOR_DATA } from "./TutorReview.constant";
 
 export const TutorReview = () => {
-  const tutorReviews = [
-    {
-      name: "John Doe",
-      image:
-        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
-      subject: "Mathematics",
-      review: "Great tutor, helped me a lot!",
-      rating: 4.5,
-      gender: "male",
-    },
-    {
-      name: "Jane Smithsons",
-      image:
-        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
-      subject: "Physics",
-      review: "Excellent explanations!",
-      rating: 5,
-      gender: "male",
-    },
-    {
-      name: "Alice Johns",
-      image:
-        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
-      subject: "English",
-      review: "Very helpful and patient.",
-      rating: 4,
-      gender: "female",
-    },
-    {
-      name: "Bob Brown",
-      image:
-        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
-      subject: "History",
-      review: "Made history fun to learn!",
-      rating: 4.5,
-      gender: "male",
-    },
-    {
-      name: "Eva Green",
-      image:
-        "https://c.superprof.com/i/m/11671691/600/20220805175604/11671691.webp",
-      subject: "Chemistry",
-      review: "Clear and concise teaching.",
-      rating: 3.5,
-      gender: "female",
-    },
-  ];
-
   return (
-    <Box sx={{ display: "flex", overflowX: "auto", alignItems: "center" }}>
-      <Box
-        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-      >
-        <Typography variant="h5" sx={{ fontWeight: 700 }}>
+    <Box
+      style={{
+        display: "flex",
+        alignItems: "center",
+        width: "100%",
+        boxSizing: "border-box",
+      }}
+    >
+      <Box sx={{ width: "35%", marginLeft: "200px" }}>
+        <Box>
+          <FaStar style={{ color: "gold", fontSize: "22px" }} />
+          <FaStar style={{ color: "gold", fontSize: "22px" }} />
+          <FaStar style={{ color: "gold", fontSize: "22px" }} />
+          <FaStar style={{ color: "gold", fontSize: "22px" }} />
+          <FaStar style={{ color: "gold", fontSize: "22px" }} />
+        </Box>
+
+        <Typography sx={{ marginTop: "12px" }} variant="h3">
           The Perfect Match
         </Typography>
-        <Stack direction="row" spacing={1}>
-          <FaStar style={{ color: "gold" }} />
-          <FaStar style={{ color: "gold" }} />
-          <FaStar style={{ color: "gold" }} />
-          <FaStar style={{ color: "gold" }} />
-          <FaStar style={{ color: "gold" }} />
-        </Stack>
-        <Typography variant="h6" sx={{ fontWeight: 500 }}>
+        <Typography sx={{ marginTop: "12px" }}>
           More than one million students gave a<br />
           <b>5 star review to their tutor</b>
         </Typography>
       </Box>
-      <Stack direction="row" spacing={2}>
-        {tutorReviews.map((tutor, index) => (
+      <Box
+        sx={{
+          display: "flex",
+          width: "1200px",
+          boxSizing: "border-box",
+          gap: "32px",
+          paddingBottom: "12px",
+          overflowX: "scroll",
+        }}
+      >
+        {TUTOR_DATA.map((tutor, index) => (
           <TutorReviewCard key={index} tutor={tutor} />
         ))}
-      </Stack>
+      </Box>
     </Box>
   );
 };

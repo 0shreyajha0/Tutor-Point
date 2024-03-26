@@ -56,32 +56,34 @@ export const Header = () => {
         sx={{ justifyContent: "space-evenly", width: "100%", p: 3 }}
       >
         <Logo />
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "12px",
-            color: "black",
-          }}
-        >
-          <IconButton>
-            <HelpOutline />
-          </IconButton>
+        <Box sx={{ display: "flex" }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              color: "black",
+            }}
+          >
+            <IconButton>
+              <HelpOutline />
+            </IconButton>
+            <Button
+              sx={{ color: "black", textTransform: "capitalize" }}
+              variant="text"
+            >
+              Tutoring Jobs
+            </Button>
+          </Box>
+
           <Button
             sx={{ color: "black", textTransform: "capitalize" }}
+            onClick={handleOpenModal}
             variant="text"
           >
-            Tutoring Jobs
+            LogIn
           </Button>
         </Box>
-
-        <Button
-          sx={{ color: "black", textTransform: "capitalize" }}
-          onClick={handleOpenModal}
-          variant="text"
-        >
-          LogIn
-        </Button>
       </Box>
 
       <Box
@@ -95,7 +97,7 @@ export const Header = () => {
           variant="h2"
           fontWeight="bold"
           color="black"
-          sx={{ width: "390px" }}
+          sx={{ width: "390px", textAlign: "center" }}
         >
           Find the perfect tutor
         </Typography>
